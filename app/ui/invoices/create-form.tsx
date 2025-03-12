@@ -1,14 +1,19 @@
-import { CustomerField } from '@/app/lib/definitions';
-import Link from 'next/link';
+import Link from "next/link";
+import { Button } from "@/app/ui/button";
+import { CustomerField } from "@/app/lib/definitions";
+
 import {
   CheckIcon,
   ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
-} from '@heroicons/react/24/outline';
-import { Button } from '@/app/ui/button';
+} from "@heroicons/react/24/outline";
 
-export default function Form({ customers }: { customers: CustomerField[] }) {
+type FormProps = {
+  customers: CustomerField[];
+};
+
+export default function Form({ customers }: FormProps) {
   return (
     <form>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
@@ -98,6 +103,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
         </fieldset>
       </div>
+
       <div className="mt-6 flex justify-end gap-4">
         <Link
           href="/dashboard/invoices"

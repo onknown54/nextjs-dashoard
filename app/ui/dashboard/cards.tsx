@@ -13,6 +13,12 @@ const iconMap = {
   invoices: InboxIcon,
 };
 
+type CardProps = {
+  title: string;
+  value: number | string;
+  type: "invoices" | "customers" | "pending" | "collected";
+};
+
 export default async function CardWrapper() {
   return (
     <>
@@ -30,15 +36,7 @@ export default async function CardWrapper() {
   );
 }
 
-export function Card({
-  title,
-  value,
-  type,
-}: {
-  title: string;
-  value: number | string;
-  type: "invoices" | "customers" | "pending" | "collected";
-}) {
+export function Card({ title, value, type }: CardProps) {
   const Icon = iconMap[type];
 
   return (

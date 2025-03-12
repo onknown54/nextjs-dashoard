@@ -7,11 +7,13 @@ import {
   FormattedCustomersTable,
 } from "@/app/lib/definitions";
 
+type CustomersTableProps = {
+  customers: FormattedCustomersTable[];
+};
+
 export default async function CustomersTable({
   customers,
-}: {
-  customers: FormattedCustomersTable[];
-}) {
+}: CustomersTableProps) {
   return (
     <div className="w-full">
       <h1 className={`${inter.className} mb-8 text-xl md:text-2xl`}>
@@ -83,7 +85,6 @@ export default async function CustomersTable({
                     </th>
                   </tr>
                 </thead>
-
                 <tbody className="divide-y divide-gray-200 text-gray-900">
                   {customers.map((customer) => (
                     <tr key={customer.id} className="group">

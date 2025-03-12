@@ -1,5 +1,5 @@
-import { clsx } from "clsx";
 import Link from "next/link";
+import { clsx } from "clsx";
 import { lusitana } from "@/app/ui/styles/fonts/fonts.font";
 
 interface Breadcrumb {
@@ -8,11 +8,11 @@ interface Breadcrumb {
   active?: boolean;
 }
 
-export default function Breadcrumbs({
-  breadcrumbs,
-}: {
+type BreadcrumbsProps = {
   breadcrumbs: Breadcrumb[];
-}) {
+};
+
+export default function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
   return (
     <nav aria-label="Breadcrumb" className="mb-6 block">
       <ol className={clsx(lusitana.className, "flex text-xl md:text-2xl")}>
