@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import { lusitana } from '@/app/ui/fonts';
-import { inter } from "@/app/ui/fonts";
+import { inter } from "@/app/ui/styles/fonts/fonts.font";
 import Search from "@/app/ui/search";
 import {
   CustomersTableType,
