@@ -1,3 +1,4 @@
+import { fetchRevenue } from "@/app/lib/data";
 import { Revenue } from "@/app/lib/definitions";
 import { generateYAxis } from "@/app/lib/utils";
 import { lusitana } from "@/app/ui/styles/fonts/fonts.font";
@@ -13,10 +14,10 @@ type RevenueChartProps = {
   revenue: Revenue[];
 };
 
-export default async function RevenueChart({ revenue }: RevenueChartProps) {
-  const chartHeight = 350;
+export default async function RevenueChart() {
+  const revenue = await fetchRevenue();
 
-  // NOTE: Uncomment this code in Chapter 7
+  const chartHeight = 350;
   const { yAxisLabels, topLabel } = generateYAxis(revenue);
 
   if (!revenue?.length)
